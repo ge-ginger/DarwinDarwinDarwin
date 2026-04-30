@@ -2,72 +2,65 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>!!!天擇說VS用進廢退!!!超級演化大冒險</title>
+    <title>演化論小天地：天擇 vs 用進廢退[cite: 1]</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="badMusic" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <!-- 經典滾動文字 -->
+    <marquee>達爾文達爾文達爾文達爾文達爾文達爾文達爾文達爾文</marquee>
 
-    <marquee scrollamount="20" class="top-title">歡迎來到演化論的地獄排版頁面 🦒 🐭 🐦</marquee>
+    <div class="content-wrapper">
+        <header>
+            <h1 class="title">🦒 課程學習成果 🧬</h1>
+            <nav>
+                <button onclick="changeBg()">達爾文達爾文</button>
+                <button onmouseover="moveButton(this)">張簡佑誠</button>
+                <button onclick="addRoach()">召喚蟑螂</button>
+            </nav>
+        </header>
 
-    <div id="chaos-container">
-        <!-- 導航功能：按了沒反應 -->
-        <nav>
-            <button onclick="alert('沒功能，別點了')">首頁</button>
-            <button onmouseover="moveButton(this)">進化點我</button>
-            <button onclick="location.reload()">重新演化</button>
-        </nav>
-
-        <section class="lamarck">
-            <h1 class="blink">拉馬克的用進廢退說</h1>
-            <p>長頸鹿的脖子是「用進廢退」的結果。伸長，bro！拉長的脖子可遺傳給子代。</p>
-            <img src="https://via.placeholder.com/150/FF00FF/FFFFFF?text=LONG+NECK" class="rotate">
-            <div class="scrolling-text">物種越經常使用的構造會越發達，不常使用的則會退化。</div>
-        </section>
-
-        <section class="weismann">
-            <h2>老鼠剪尾實驗 (Mickey No Tail)</h2>
-            <p>魏斯曼剪掉老鼠尾巴，子代還是有尾巴。推翻拉馬克！</p>
-            <div class="mickey-box">✂️🐭</div>
-        </section>
-
-        <section class="darwin">
-            <h1 class="rainbow-text">達爾文的天擇說 (The Finches)</h1>
-            <p>小獵犬號旅程，加拉巴哥群島。雀鳥的喙各不相同，適合吃不同的食物：</p>
-            <ul>
-                <li>Seeds</li>
-                <li>Nuts</li>
-                <li>Nectar</li>
-                <li>Froot Loops (???)</li>
-                <li>Cocaine (根據你的圖片，這很混亂)</li>
-                <li>Espresso</li>
-            </ul>
-        </section>
-
-        <section class="malthus">
-            <h3>馬爾薩斯人口論</h3>
-            <div class="stats">
-                <p>糧食：算術級數成長 (+)</p>
-                <p>人口：幾何級數成長 (x)</p>
-                <div class="famine">飢荒發生預警！！！</div>
+        <!-- 拉馬克區塊：變大但不再晃動 -->
+        <section class="lamarck-section">
+            <h1 class="big-title">拉馬克的用進廢退說[cite: 1]</h1>
+            <div class="box">
+                <p>拉馬克認為長頸鹿脖子長，是因為經常伸長脖子吃樹葉，這種後天獲得的性狀可以傳給下一代[cite: 1]。</p>
+                <h2 class="stretch">伸長，BRO！[cite: 1]</h2>
             </div>
         </section>
 
-        <section class="wallace">
-            <h2>華萊士線 (Wallace Line)</h2>
-            <p>峇厘島與龍目島只隔30公里，生物卻完全不同。因為冰河期沒相接！</p>
-            <div class="mp-bar">消耗 MP30 / 75% 攻30</div>
+        <!-- 魏斯曼區塊 -->
+        <section class="weismann-section">
+            <h2>魏斯曼的老鼠剪尾實驗[cite: 1]</h2>
+            <p>即使剪掉老鼠尾巴，子代依然有尾巴。這推翻了用進廢退說[cite: 1]。</p>
+            <div class="mouse-icon">✂️🐭</div>
         </section>
 
-        <section class="bugs">
-            <h2 class="shake">殺蟲劑抗藥性 🪳</h2>
-            <p>噴效效效效效效效效效效效效效效效效！</p>
-            <p>細菌病毒突變，抗生素篩選。物競天擇，適者生存。</p>
+        <!-- 達爾文區塊 -->
+        <section class="darwin-section">
+            <h2>達爾文的天擇說[cite: 1]</h2>
+            <p>適者生存，不適者淘汰。加拉巴哥群島的雀鳥因為食物不同，演化出不同的喙[cite: 1]。</p>
+            <ul>
+                <li>堅果 🥜[cite: 1]</li>
+                <li>種子 🌰[cite: 1]</li>
+                <li>花蜜 🌸[cite: 1]</li>
+                <li>麥片圈 (Froot Loops) 🥣[cite: 1]</li>
+            </ul>
+        </section>
+
+        <!-- 華萊士與人口論 -->
+        <section class="others">
+            <p>馬爾薩斯人口論：資源增長跟不上人口爆炸[cite: 1]。</p>
+            <p>華萊士線：區隔了東南亞與新幾內亞的生物分佈[cite: 1]。</p>
+        </section>
+
+        <!-- 蟑螂抗藥性區塊 -->
+        <section id="roach-pit">
+            <h2>噴效！噴效！噴效！[cite: 1]</h2>
+            <p>抗藥性蟑螂是天擇的結果，殺蟲劑篩選出了強大的倖存者[cite: 1]。</p>
         </section>
 
         <footer>
-            <p>心得：張簡宥呈找了一堆字卡。希望能幫助複習。我也覺得很亂。</p>
-            <button id="useless-btn">領取演化獎勵</button>
+            <p>心得：查找資料很辛苦，這組是張簡宥呈找字卡，大家一起努力完成[cite: 1]。</p>
         </footer>
     </div>
 

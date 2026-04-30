@@ -1,4 +1,4 @@
-// 1. 讓按鈕跑給人追
+// 1. 跑給人追的按鈕 (保留，因為這很亂)
 function moveButton(btn) {
     const x = Math.random() * (window.innerWidth - btn.clientWidth);
     const y = Math.random() * (window.innerHeight - btn.clientHeight);
@@ -7,46 +7,37 @@ function moveButton(btn) {
     btn.style.top = y + 'px';
 }
 
-// 2. 隨機彈出沒意義的警告
-setInterval(() => {
-    const messages = [
-        "警告：你的脖子正在變長！",
-        "魏斯曼正在看著你的尾巴。",
-        "你被天擇淘汰了嗎？",
-        "噴效！噴效！噴效！",
-        "幾何級數成長中..."
-    ];
-    if (Math.random() > 0.95) {
-        alert(messages[Math.floor(Math.random() * messages.length)]);
-    }
-}, 5000);
+// 2. 換背景顏色的功能
+function changeBg() {
+    const colors = ['#ffccc7', '#d9f7be', '#b5f5ec', '#efdbff', '#fffb8f'];
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+}
 
-// 3. 滑鼠追蹤效果 (無意義的垃圾)
+// 3. 召喚蟑螂 (這功能很亂七八糟)
+function addRoach() {
+    const roach = document.createElement('div');
+    roach.innerHTML = "🪳";
+    roach.style.position = 'fixed';
+    roach.style.left = Math.random() * 100 + 'vw';
+    roach.style.top = Math.random() * 100 + 'vh';
+    roach.style.fontSize = '40px';
+    roach.style.zIndex = '9999';
+    document.body.appendChild(roach);
+}
+
+// 4. 滑鼠跟隨效果 (改成輕柔的小草，象徵演化中的植物)
 document.addEventListener('mousemove', (e) => {
-    const trailer = document.createElement('div');
-    trailer.innerHTML = "🧬";
-    trailer.style.position = 'fixed';
-    trailer.style.left = e.clientX + 'px';
-    trailer.style.top = e.clientY + 'px';
-    trailer.style.fontSize = '20px';
-    trailer.style.pointerEvents = 'none';
-    document.body.appendChild(trailer);
-    
-    setTimeout(() => {
-        trailer.remove();
-    }, 500);
+    if (Math.random() > 0.9) { // 減少產生的頻率
+        const leaf = document.createElement('div');
+        leaf.innerHTML = "🌿";
+        leaf.style.position = 'fixed';
+        leaf.style.left = e.clientX + 'px';
+        leaf.style.top = e.clientY + 'px';
+        leaf.style.pointerEvents = 'none';
+        document.body.appendChild(leaf);
+        
+        setTimeout(() => { leaf.remove(); }, 1000);
+    }
 });
 
-// 4. 強制播放難聽的音效 (若瀏覽器允許)
-window.onload = () => {
-    const audio = document.getElementById('badMusic');
-    audio.volume = 0.2;
-    // 注意：現代瀏覽器通常會擋掉自動播放，除非使用者有互動
-    document.body.onclick = () => audio.play();
-};
-
-document.getElementById('useless-btn').onclick = () => {
-    for(let i=0; i<10; i++) {
-        window.open("https://www.google.com/search?q=Darwin+Finches");
-    }
-};
+// 移除原本的強制捲動邏輯 (Relaxing...)
