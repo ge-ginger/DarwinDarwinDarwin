@@ -1,43 +1,50 @@
-// 1. 跑給人追的按鈕 (保留，因為這很亂)
-function moveButton(btn) {
-    const x = Math.random() * (window.innerWidth - btn.clientWidth);
-    const y = Math.random() * (window.innerHeight - btn.clientHeight);
+// 1. 會逃跑的按鈕
+function flee(btn) {
+    const newX = Math.random() * (window.innerWidth - btn.clientWidth);
+    const newY = Math.random() * (window.innerHeight - btn.clientHeight);
     btn.style.position = 'fixed';
-    btn.style.left = x + 'px';
-    btn.style.top = y + 'px';
+    btn.style.left = newX + 'px';
+    btn.style.top = newY + 'px';
 }
 
-// 2. 換背景顏色的功能
+// 2. 隨機背景色 (放鬆模式)
 function changeBg() {
-    const colors = ['#ffccc7', '#d9f7be', '#b5f5ec', '#efdbff', '#fffb8f'];
-    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    const hue = Math.random() * 360;
+    document.body.style.backgroundColor = `hsl(${hue}, 60%, 90%)`;
 }
 
-// 3. 召喚蟑螂 (這功能很亂七八糟)
-function addRoach() {
+// 3. 召喚抗藥性蟑螂 (對應殺蟲劑主題)
+function summonRoach() {
     const roach = document.createElement('div');
     roach.innerHTML = "🪳";
     roach.style.position = 'fixed';
     roach.style.left = Math.random() * 100 + 'vw';
     roach.style.top = Math.random() * 100 + 'vh';
-    roach.style.fontSize = '40px';
-    roach.style.zIndex = '9999';
+    roach.style.fontSize = '45px';
+    roach.style.zIndex = '1000';
+    roach.style.transition = 'all 2s';
+    
     document.body.appendChild(roach);
+
+    // 讓蟑螂會隨機爬行
+    setInterval(() => {
+        roach.style.left = Math.random() * 100 + 'vw';
+        roach.style.top = Math.random() * 100 + 'vh';
+    }, 2000);
 }
 
-// 4. 滑鼠跟隨效果 (改成輕柔的小草，象徵演化中的植物)
+// 4. 滑鼠跟隨裝飾 (小葉子象徵演化與環境)
 document.addEventListener('mousemove', (e) => {
-    if (Math.random() > 0.9) { // 減少產生的頻率
+    if (Math.random() > 0.92) {
         const leaf = document.createElement('div');
         leaf.innerHTML = "🌿";
         leaf.style.position = 'fixed';
         leaf.style.left = e.clientX + 'px';
         leaf.style.top = e.clientY + 'px';
         leaf.style.pointerEvents = 'none';
+        leaf.style.zIndex = '500';
         document.body.appendChild(leaf);
         
-        setTimeout(() => { leaf.remove(); }, 1000);
+        setTimeout(() => leaf.remove(), 1200);
     }
 });
-
-// 移除原本的強制捲動邏輯 (Relaxing...)

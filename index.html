@@ -2,65 +2,69 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>演化論小天地：天擇 vs 用進廢退[cite: 1]</title>
+    <title>旋轉吧！演化論小天地</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 經典滾動文字 -->
-    <marquee>達爾文達爾文達爾文達爾文達爾文達爾文達爾文達爾文</marquee>
+    <marquee scrollamount="12">
+        達爾文達爾文達爾文達爾文達爾文達爾文達爾文達爾文🦒 🐭 🐦 🪳[cite: 1]
+    </marquee>
 
-    <div class="content-wrapper">
+    <div class="main-container">
         <header>
-            <h1 class="title">🦒 課程學習成果 🧬</h1>
-            <nav>
-                <button onclick="changeBg()">達爾文達爾文</button>
-                <button onmouseover="moveButton(this)">張簡佑誠</button>
-                <button onclick="addRoach()">召喚蟑螂</button>
+            <h1 class="main-title">拉馬克的拉瑪克用進廢退說</h1>
+            <nav class="action-bar">
+                <button onclick="changeBg()">衣內斯</button>
+                <button onmouseover="flee(this)">張簡佑誠</button>
+                <button onclick="summonRoach()">召喚蟑螂</button>
             </nav>
         </header>
 
-        <!-- 拉馬克區塊：變大但不再晃動 -->
-        <section class="lamarck-section">
-            <h1 class="big-title">拉馬克的用進廢退說[cite: 1]</h1>
-            <div class="box">
-                <p>拉馬克認為長頸鹿脖子長是因為經常伸長脖子吃樹葉這種後天獲得的性狀可以傳給下一代[cite: 1]。</p>
-                <h2 class="stretch">伸長，BRO！[cite: 1]</h2>
+        <!-- 拉馬克區塊 -->
+        <section class="evolution-block lamarck">
+            <h1 class="mega-title">拉馬克的用進廢退說[cite: 1]</h1>
+            <div class="content-box">
+                <p>拉馬克認為物種經常使用的構造會發達不使用的則會退化[cite: 1]。</p>
+                <p>長頸鹿的祖先為了取食高處樹葉而伸長脖子這種「獲得性遺傳」會傳給子代[cite: 1]。</p>
+                <h3 class="stretch-text">獲得性遺傳！[cite: 1]</h3>
             </div>
         </section>
 
         <!-- 魏斯曼區塊 -->
-        <section class="weismann-section">
+        <section class="evolution-block weismann">
             <h2>魏斯曼的老鼠剪尾實驗[cite: 1]</h2>
-            <p>即使剪掉老鼠尾巴子代依然有尾巴這推翻了用進廢退說[cite: 1]。</p>
-            <div class="mouse-icon">✂️🐭</div>
+            <p>魏斯曼剪掉數代老鼠尾巴後子代仍具有尾巴最終推翻了用進廢退說[cite: 1]。</p>
+            <div class="icon-display">✂️🐭</div>
         </section>
 
         <!-- 達爾文區塊 -->
-        <section class="darwin-section">
+        <section class="evolution-block darwin">
             <h2>達爾文的天擇說[cite: 1]</h2>
-            <p>適者生存不適者淘汰加拉巴哥群島的雀鳥因為食物不同演化出不同的喙[cite: 1]</p>
+            <p>達爾文搭乘小獵犬號在加拉巴哥群島觀察到不同島嶼的雀鳥因食物資源不同而有不同的喙[cite: 1]。</p>
+            <p>適合環境資源的個體能更好地存活並繁衍稱為自然選擇[cite: 1]。</p>
             <ul>
-                <li>堅果 🥜[cite: 1]</li>
-                <li>種子 🌰[cite: 1]</li>
-                <li>花蜜 🌸[cite: 1]</li>
-                <li>麥片圈 (Froot Loops) 🥣[cite: 1]</li>
+                <li>堅果雀鳥 🥜[cite: 1]</li>
+                <li>種子雀鳥 🌰[cite: 1]</li>
+                <li>花蜜雀鳥 🌸[cite: 1]</li>
+                <li>麥片圈雀鳥 (Froot Loops) 🥣[cite: 1]</li>
             </ul>
         </section>
 
-        <!-- 華萊士與人口論 -->
-        <section class="others">
-            <p>馬爾薩斯人口論資源增長跟不上人口爆炸[cite: 1]。</p>
-            <p>華萊士線區隔了東南亞與新幾內亞的生物分佈[cite: 1]。</p>
+        <!-- 其他重點區塊 -->
+        <section class="evolution-block mixed">
+            <h3>萊爾地質學：緩慢改變的地球[cite: 1]</h3>
+            <h3>馬爾薩斯人口論：資源競爭的發端[cite: 1]</h3>
+            <h3>華萊士線：馬來群島間的生物分界[cite: 1]</h3>
         </section>
 
-        <!-- 蟑螂抗藥性區塊 -->
-        <section id="roach-pit">
-            <h2>噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！[cite: 1]</h2>
-            <p>抗藥性蟑螂是天擇的結果，殺蟲劑篩選出了強大的倖存者[cite: 1]。</p>
+        <!-- 現代演化 -->
+        <section class="evolution-block modern">
+            <h2 class="roach-title">噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！噴效！[cite: 1]</h2>
+            <p>殺蟲劑篩選出了具備抗藥性的蟑螂，這是環境改變下的物競天擇[cite: 1]。</p>
         </section>
 
         <footer>
-            <p>心得：查找資料很辛苦，張簡宥呈負責找字卡[cite: 1]。</p>
+            <p>心得：查找資料很辛苦，特別感謝張簡宥呈提供字卡與圖片資源[cite: 1]。</p>
         </footer>
     </div>
 
