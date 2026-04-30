@@ -1,0 +1,79 @@
+/* 讓背景顏色狂閃 */
+@keyframes flash {
+    0% { background-color: #ff0000; }
+    25% { background-color: #00ff00; }
+    50% { background-color: #0000ff; }
+    75% { background-color: #ffff00; }
+    100% { background-color: #ff00ff; }
+}
+
+body {
+    animation: flash 0.5s infinite;
+    font-family: "Comic Sans MS", "Papyrus", cursive;
+    cursor: wait;
+    overflow-x: hidden;
+}
+
+#chaos-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 50px;
+    padding: 20px;
+    border: 10px dashed lime;
+    transform: skewY(-2deg); /* 歪掉的排版 */
+}
+
+.blink {
+    animation: blinker 0.1s linear infinite;
+    color: red;
+    font-size: 50px;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.rotate {
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}
+
+.rainbow-text {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: transparent;
+    font-size: 40px;
+}
+
+/* 讓圖片跟文字亂疊 */
+section {
+    position: relative;
+    border-bottom: 5px double navy;
+    margin-bottom: 100px;
+}
+
+ul {
+    column-count: 3;
+    background: black;
+    color: lime;
+}
+
+.shake {
+    display: inline-block;
+    animation: shake 0.2s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.mp-bar {
+    background: blue;
+    color: white;
+    width: 200px;
+    border: 5px ridge silver;
+}
