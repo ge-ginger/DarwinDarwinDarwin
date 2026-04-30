@@ -1,82 +1,78 @@
-/* 基礎設定：移除壓迫感的溫和底色 */
+/* 基本容器 */
 body {
-    background-color: #fdfdfd;
-    font-family: "標楷體", serif;
+    background-color: #fafafa;
     margin: 0;
-    transition: background-color 0.5s;
+    transition: background 0.5s;
 }
 
-.main-container {
-    max-width: 1000px;
+.main-wrapper {
+    max-width: 950px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 8px ridge #ffd700;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 10px groove silver;
+    padding: 20px;
 }
 
-/* 巨大的拉馬克標題 */
+/* 巨大拉馬克標題 */
 .mega-title {
-    font-size: 160px; /* 超巨大 */
-    color: #ff0000;
-    background: #ffff00;
+    font-size: 165px;
+    color: red;
+    background: yellow;
     text-align: center;
-    margin: 10px 0;
     word-break: break-all;
-    border: 5px solid #000;
-    transition: transform 0.5s;
+    font-family: "Impact", Charcoal, sans-serif; /* 字體 1 */
 }
 
-/* 伸長文字效果 */
-.stretch-text {
-    font-size: 70px;
-    color: #228b22;
-    text-align: center;
-}
-
-/* --- 旋轉功能核心代碼 --- */
-
-@keyframes rotate-fast {
+/* --- 旋轉功能 --- */
+@keyframes spin-clockwise {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-@keyframes rotate-reverse {
+@keyframes spin-counter {
     from { transform: rotate(0deg); }
     to { transform: rotate(-360deg); }
 }
 
-/* 標題旋轉設定 */
-h1:hover {
-    animation: rotate-fast 0.6s infinite linear;
-    cursor: help;
-}
+h1:hover { animation: spin-clockwise 0.7s infinite linear; }
+h2:hover { animation: spin-counter 1.5s infinite linear; }
+h3:hover { animation: spin-clockwise 2.5s infinite linear; }
 
-h2:hover {
-    animation: rotate-reverse 1.2s infinite linear;
-    color: #0000ff;
-}
+/* --- 瘋狂字體設定 (每一行都不同) --- */
+.main-title { font-family: "Comic Sans MS", cursive; } /* 字體 2 */
+.p1 { font-family: "Courier New", Courier, monospace; font-weight: bold; } /* 字體 3 */
+.p2 { font-family: "Georgia", serif; font-style: italic; } /* 字體 4 */
+.stretch-text { font-family: "Arial Black", Gadget, sans-serif; color: green; } /* 字體 5 */
 
-h3:hover {
-    animation: rotate-fast 2s infinite linear;
-    color: #ff00ff;
-}
+.h2-1 { font-family: "Times New Roman", Times, serif; font-size: 60px; } /* 字體 6 */
+.p3 { font-family: "Verdana", Geneva, sans-serif; color: blue; } /* 字體 7 */
 
-/* --- 排版裝飾 --- */
-.evolution-block {
-    margin-bottom: 50px;
-    padding: 25px;
-    border-radius: 30px;
-}
+.h2-2 { font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; } /* 字體 8 */
+.p4 { font-family: "Lucida Console", Monaco, monospace; font-size: 14px; } /* 字體 9 */
+.h3-1 { font-family: "Trebuchet MS", Helvetica, sans-serif; } /* 字體 10 */
 
-.lamarck { background-color: #fff0f6; }
-.weismann { background-color: #e6f7ff; border: 2px dashed blue; }
-.darwin { background-color: #f6ffed; border-left: 15px solid #52c41a; }
-.modern { background-color: #262626; color: #fff; }
+.li1 { font-family: "Garamond", serif; } /* 字體 11 */
+.li2 { font-family: "Tahoma", Geneva, sans-serif; } /* 字體 12 */
+.li3 { font-family: "Copperplate", "Copperplate Gothic Light", fantasy; } /* 字體 13 */
+.li4 { font-family: "Brush Script MT", cursive; font-size: 30px; } /* 字體 14 */
 
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #ffec3d;
-    border: 3px outset #000;
-    cursor: pointer;
-}
+.h2-3 { font-family: "Bookman", serif; } /* 字體 15 */
+.p5 { font-family: "Century Gothic", sans-serif; } /* 字體 16 */
+.h2-4 { font-family: "Papyrus", fantasy; } /* 字體 17 */
+.p6 { font-family: "Arial", Helvetica, sans-serif; text-decoration: underline; } /* 字體 18 */
+
+.h2-5 { font-family: "Symbol", sans-serif; } /* 字體 19 */
+.p7 { font-family: "MS Serif", "New York", serif; } /* 字體 20 */
+
+.f1 { font-family: "Franklin Gothic Medium", sans-serif; }
+.f2 { font-family: "Wingdings", sans-serif; } /* 這會變成符號，超亂 */
+.f3 { font-family: "Webdings", sans-serif; }
+
+.foot-note { font-family: "標楷體", cursive; font-size: 12px; }
+
+/* 區塊裝飾 */
+.block { margin: 30px 0; padding: 15px; border-radius: 10px; }
+.lamarck-box { background: #fff0f6; }
+.weismann-box { background: #e6f7ff; }
+.darwin-box { background: #f6ffed; }
+.bug-box { background: #262626; color: lime; }
