@@ -76,3 +76,9 @@ h3:hover { animation: spin-clockwise 2.5s infinite linear; }
 .weismann-box { background: #e6f7ff; }
 .darwin-box { background: #f6ffed; }
 .bug-box { background: #262626; color: lime; }
+/* 讓手動放入的圖片具備隨機漂浮的能力 */
+.chaos-img {
+    position: absolute; 
+    z-index: 9999;      /* 確保在所有文字上方 */
+    visibility: hidden; /* 先隱藏，等 JS 定位完再顯示 */
+}

@@ -48,3 +48,54 @@ document.addEventListener('mousemove', (e) => {
         setTimeout(() => leaf.remove(), 1200);
     }
 });
+// 讓圖片隨機分布的函式
+function randomizeImages() {
+    const images = document.querySelectorAll('.chaos-img');
+    const container = document.querySelector('.main-layout');
+    
+    // 獲取容器的寬度與高度，確保圖片不會跑出範圍
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
+    images.forEach(img => {
+        // 隨機計算位置（百分比或像素）
+        const randomTop = Math.floor(Math.random() * (containerHeight - 200));
+        const randomLeft = Math.floor(Math.random() * (containerWidth - 200));
+
+        img.style.top = randomTop + "px";
+        img.style.left = randomLeft + "px";
+        img.style.visibility = "visible"; // 定位好了，現身吧！
+    });
+}
+
+// 網頁載入後執行
+window.onload = () => {
+    randomizeImages();
+    // 也可以順便檢查你有沒有召喚過蟑螂
+    console.log("環境已改變，圖片已隨機演化[cite: 1]");
+};
+
+// 1. 會逃跑的按鈕 (保留)
+function flee(btn) {
+    btn.style.position = 'fixed';
+    btn.style.left = Math.random() * 80 + 'vw';
+    btn.style.top = Math.random() * 80 + 'vh';
+}
+
+// 2. 召喚抗藥蟑螂 (保留，這符合天擇說[cite: 1])
+function spawnRoach() {
+    const roach = document.createElement('div');
+    roach.innerHTML = "🪳";
+    roach.className = "font-black";
+    roach.style.position = 'fixed';
+    roach.style.left = Math.random() * 90 + 'vw';
+    roach.style.top = Math.random() * 90 + 'vh';
+    roach.style.fontSize = '50px';
+    roach.style.zIndex = '10000';
+    document.body.appendChild(roach);
+}
+
+// 3. 背景變換
+function changeBg() {
+    document.body.style.backgroundColor = `hsl(${Math.random() * 360}, 40%, 90%)`;
+}
